@@ -8,9 +8,25 @@
 
 <template>
   <div style="position: absolute; display:flex; align-items: flex-end;">
-    <div v-if="$store.state.showLocationButton" class="tbtcontainer" style="max-width: 300px; display:flex; align-items: flex-end;">
-      <v-btn class="tmenubt" color="secondary" @click.stop.native="locationClicked()"><v-icon class="hidden-sm-and-up">mdi-map-marker</v-icon><span class="hidden-xs-only">{{ $store.state.currentLocation.short_name }}</span></v-btn>
+    <div>
+      <div v-if="$store.state.showLocationButton" class="tbtcontainer" style="max-width: 300px; display:flex; align-items: flex-end;">
+        <v-btn class="tmenubt" color="secondary" @click.stop.native="locationClicked()"><v-icon class="hidden-sm-and-up">mdi-map-marker</v-icon><span class="hidden-xs-only">{{ $store.state.currentLocation.short_name }}</span></v-btn>
+      </div>
+
+      <v-menu v-if="$store.state.showTimeButtons" :close-on-content-click="false" transition="v-slide-y-transition" offset-y top left>
+        <template v-slot:activator="{ on }">
+          <v-btn large class="tmenubt" color="secondary" v-on="on">
+            <v-icon class="hidden-sm-and-up">mdi-clock-outline</v-icon>
+            <span class="hidden-xs-only">
+              <div class="text-subtitle-2">{{ time }}</div>
+              <div class="text-caption">{{ date }}</div>
+            </span>
+          </v-btn>
+        </template>
+        <date-time-picker v-model="pickerDate" :location="$store.state.currentLocation"></date-time-picker>
+      </v-menu>
     </div>
+
     <v-spacer></v-spacer>
 
     <bottom-button :label="$t('Constellations')"
@@ -87,18 +103,18 @@
 
     <v-spacer></v-spacer>
 
-    <v-menu v-if="$store.state.showTimeButtons" :close-on-content-click="false" transition="v-slide-y-transition" offset-y top left>
-      <template v-slot:activator="{ on }">
-        <v-btn large class="tmenubt" color="secondary" v-on="on">
-          <v-icon class="hidden-sm-and-up">mdi-clock-outline</v-icon>
-          <span class="hidden-xs-only">
-            <div class="text-subtitle-2">{{ time }}</div>
-            <div class="text-caption">{{ date }}</div>
-          </span>
-        </v-btn>
-      </template>
-      <date-time-picker v-model="pickerDate" :location="$store.state.currentLocation"></date-time-picker>
-    </v-menu>
+    <div class="attribution-container">
+      <div>
+        Made with <span class="hearth">❤</span> during️<br />
+        <a target="_blank" href="https://www.spaceappschallenge.org/">NASA Space Apps Challenge 2021</a>
+      </div>
+      <br />
+      <div>Based on awesome</div>
+
+      <img class="tbtitle hidden-xs-only" id="stellarium-web-toolbar-logo" src="@/assets/images/logo.svg" width="30" height="30" alt="Stellarium Web Logo"/>
+      <span class="tbtitle hidden-sm-and-down">Stellarium<sup>Web</sup></span>
+      <div>We all stand on the shoulders of giants</div>
+    </div>
 
   </div>
 </template>
@@ -187,4 +203,14 @@ export default {
     width: 300px;
   }
 }
+
+.attribution-container {
+  text-align: right;
+  margin: 6px;
+}
+
+.attribution-container .hearth {
+  color: red;
+}
+
 </style>

@@ -55,6 +55,7 @@
 
   <v-main>
     <v-container class="fill-height" fluid style="padding: 0">
+      <div class="rubber-duck"><img :src="require('@/assets/images/duck-transparent-unsure-s.png')" alt="duck" /></div>
       <div id="stel" v-bind:class="{ right_panel: $store.state.showSidePanel }">
         <div style="position: relative; width: 100%; height: 100%">
           <component v-bind:is="guiComponent"></component>
@@ -339,6 +340,34 @@ html, body, #app {
 
 .v-application--wrap {
   min-height: 100%!important;
+}
+
+.rubber-duck {
+  position: absolute;
+  z-index: 1000;
+  animation: rubber-duck-spin infinite 60s linear;
+  top: 150px;
+}
+.rubber-duck img {
+  width: 50px;
+}
+
+@keyframes rubber-duck-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+
+  0%,
+  100% {
+    left: 0;
+  }
+
+  50% {
+    left: 100%;
+  }
 }
 
 </style>

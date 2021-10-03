@@ -43,7 +43,8 @@ const createStore = () => {
       showTimeButtons: true,
       showObservingPanelTabsButtons: true,
       showSelectedInfoButtons: true,
-      showFPS: false,
+      showFPS: true,
+      showFOV: false,
       showEquatorialJ2000GridButton: false,
 
       fullscreen: false,
