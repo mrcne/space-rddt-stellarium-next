@@ -11,6 +11,13 @@
   <v-card v-if="$store.state.showDataCreditsDialog">
     <v-card-title><div class="text-h5">Data Credits</div></v-card-title>
     <v-card-text style="height: 600px;">
+      <h3>Debris</h3>
+      <ul class="data-credits">
+        <li>This work has made use of data from Space-Track.org:<br />
+          <a href="https://www.space-track.org/documentation#/api" target="_blank" rel="noopener">https://www.space-track.org/documentation#/api</a>)).
+        </li>
+      </ul>
+      </p>
       <h3>Stars</h3>
       <p>Combination of the following catalogues:
         <ul class="data-credits">

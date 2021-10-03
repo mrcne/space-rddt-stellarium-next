@@ -12,6 +12,37 @@
   <v-navigation-drawer v-model="nav" app stateless width="300">
     <v-layout column fill-height>
       <v-list dense>
+        <v-expansion-panels>
+          <v-expansion-panel v-theme="">
+            <v-expansion-panel-header>What is this?</v-expansion-panel-header>
+            <v-expansion-panel-content>Contrary to popular beliefs, space around Earth is far from empty.<br /><br />
+
+              Our project’s goal is to counter the “out of sight, out of mind” careless approach of the general public towards the issue of space debris. In order to make it memorable, entertaining and funny, we decided to show space debris from an Earthling’s perspective but with a twist: we have marked known space debris with oversized rubber duckies.
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+          <v-expansion-panel>
+            <v-expansion-panel-header>How did trash end up there?</v-expansion-panel-header>
+            <v-expansion-panel-content>Space debris (also known as space junk, space pollution, space waste, space trash, or space garbage) is defunct artificial objects in space—principally in Earth orbit—which no longer serve a useful function. These include derelict spacecraft—nonfunctional spacecraft and abandoned launch vehicle stages—mission-related debris, and particularly numerous in Earth orbit, fragmentation debris from the breakup of derelict rocket bodies and spacecraft. In addition to derelict man-made objects left in orbit, other examples of space debris include fragments from their disintegration, erosion and collisions or even paint flecks, solidified liquids expelled from spacecraft, and unburned particles from solid rocket motors. Space debris represents a risk to spacecraft.
+              <br /><br />
+              <a target="_blank" href="https://en.wikipedia.org/wiki/Space_debris">Read more on Wikipedia</a>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+          <v-expansion-panel>
+            <v-expansion-panel-header>Space debris detection technologies</v-expansion-panel-header>
+            <v-expansion-panel-content>Two complementary technologies exist for space debris tracking: optical tracking with lasers or telescopes equipped with event-driven cameras and radar tracking with phased-array radars.
+              Event-driven cameras are a special type of digital cameras that - contrary to well-known CCD cameras in our smartphones or DSLRs - only register the pixels seeing movement which greatly reduces readout times and the amount of data generated.
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+          <v-expansion-panel>
+            <v-expansion-panel-header>Space Debris Elimination (SpaDE)</v-expansion-panel-header>
+            <v-expansion-panel-content>The amount of debris in low Earth orbit (LEO) has increased rapidly over the last twenty years. This prevalence of debris increases the likelihood of cascading collisions that cause the debris generation rate to outstrip the rate at which debris deorbits, falling into the atmosphere and burning up. This accumulation creates debris belts that render many orbits unusable. Current strategies emphasize debris mitigation, as there is no practical method for debris removal. Raytheon BBN Technologies (BBN) and the University of Michigan will study the Space Debris Elimination (SpaDE) system to remove debris from orbit by firing focused pulses of atmospheric gases into the path of targeted debris. These pulses will increase drag sufficiently to cause the deorbit rate to exceed the debris generation rate. The pulses themselves will fall back into the atmosphere, leaving no residual trace in orbit to interfere with LEO satellites. In contrast to other proposed methods, SpaDE is failsafe, in that it places no solid material in orbit where a malfunction could create new debris. This project will conduct technology risk reduction analyses and modeling. The research will produce an academic paper and presentation describing the technical results and providing the foundation for future work, to include prototyping, field experiments and ultimately deployment of a SpaDE system.
+              <br /><br />
+              Read more on:
+
+              <a target="_blank" href="https://data.nasa.gov/dataset/Space-Debris-Elimination-SpaDE-/x9yp-8wsa">https://data.nasa.gov/dataset/Space-Debris-Elimination-SpaDE-/x9yp-8wsa</a>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
         <template v-for="(item,i) in menuItems">
           <template v-if="$store.state[item.store_show_menu_item] === false"></template>
           <v-subheader v-else-if="item.header" v-text="item.header" class="grey--text text--darken-1" :key="i"/>
@@ -80,10 +111,9 @@ export default {
   data (context) {
     return {
       menuItems: [
-        { title: this.$t('View Settings'), icon: 'mdi-settings', store_var_name: 'showViewSettingsDialog', store_show_menu_item: 'showViewSettingsMenuItem' },
-        { title: this.$t('Planets Tonight'), icon: 'mdi-panorama-fisheye', store_var_name: 'showPlanetsVisibilityDialog', store_show_menu_item: 'showPlanetsVisibilityMenuItem' },
         { divider: true }
       ].concat(this.getPluginsMenuItems()).concat([
+        { title: this.$t('View Settings'), icon: 'mdi-settings', store_var_name: 'showViewSettingsDialog', store_show_menu_item: 'showViewSettingsMenuItem' },
         { title: this.$t('Data Credits'), footer: true, icon: 'mdi-copyright', store_var_name: 'showDataCreditsDialog' }
       ]),
       menuComponents: [].concat(this.getPluginsMenuComponents()),
@@ -350,6 +380,11 @@ html, body, #app {
 }
 .rubber-duck img {
   width: 50px;
+}
+
+.theme--dark.v-expansion-panels .v-expansion-panel{
+  background: none!important;
+  border: none!important;
 }
 
 @keyframes rubber-duck-spin {
