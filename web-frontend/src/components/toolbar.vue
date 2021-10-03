@@ -12,7 +12,7 @@
       <v-app-bar-nav-icon @click="toggleNavigationDrawer"></v-app-bar-nav-icon>
 
       <v-spacer></v-spacer>
-      <h1>NASA Rubber Duck Debris Tracker</h1>
+      <h1>Rubber Duck Debris Tracker</h1>
       <v-spacer></v-spacer>
       <div v-if="$store.state.showFPS" class="subheader grey--text hidden-sm-and-down pr-2" style="user-select: none;">FPS {{ $store.state.stel ? $store.state.stel.fps.toFixed(1) : '?' }}</div>
       <div v-if="$store.state.showFOV" class="subheader grey--text hidden-sm-and-down" style="user-select: none;">FOV {{ fov }}</div>

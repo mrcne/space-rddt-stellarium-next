@@ -55,7 +55,6 @@
 
   <v-main>
     <v-container class="fill-height" fluid style="padding: 0">
-      <div class="rubber-duck"><img :src="require('@/assets/images/duck-transparent-unsure-s.png')" alt="duck" /></div>
       <div id="stel" v-bind:class="{ right_panel: $store.state.showSidePanel }">
         <div style="position: relative; width: 100%; height: 100%">
           <component v-bind:is="guiComponent"></component>
@@ -260,7 +259,8 @@ export default {
             core.planets.addDataSource({ url: process.env.BASE_URL + 'skydata/surveys/sso/sun', key: 'sun' })
             core.planets.addDataSource({ url: process.env.BASE_URL + 'skydata/surveys/sso/moon', key: 'default' })
             core.comets.addDataSource({ url: process.env.BASE_URL + 'skydata/CometEls.txt', key: 'mpc_comets' })
-            core.satellites.addDataSource({ url: process.env.BASE_URL + 'skydata/tle_satellite.jsonl.gz', key: 'jsonl/sat' })
+            // core.satellites.addDataSource({ url: process.env.BASE_URL + 'skydata/tle_satellite.jsonl.gz', key: 'jsonl/sat' })
+            core.satellites.addDataSource({ url: 'https://space-rddt.s3.eu-west-1.amazonaws.com/tle_debris-new7.jsonl.gz', key: 'jsonl/sat' })
           }
         })
       } catch (e) {
