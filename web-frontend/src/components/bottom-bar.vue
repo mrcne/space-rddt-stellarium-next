@@ -29,6 +29,12 @@
 
     <v-spacer></v-spacer>
 
+    <bottom-button :label="$t('I don\'t like rubber ducks')"
+                   :img="require('@/assets/images/duck1.svg')"
+                   img_alt="Constellations Button"
+                   :toggled="$store.state.stel.constellations.lines_visible"
+                   @clicked="(b) => { $stel.core.constellations.lines_visible = b; $stel.core.constellations.lines_visible = b }">
+    </bottom-button>
     <bottom-button :label="$t('Constellations')"
                 v-if="$store.state.showConstellationsLinesButton !== false"
                 :img="require('@/assets/images/btn-cst-lines.svg')"
@@ -79,6 +85,7 @@
                 @clicked="(b) => { $stel.core.lines.equatorial.visible = b }">
     </bottom-button>
     <bottom-button :label="$t('Deep Sky Objects')"
+                v-if="$store.state.showDeepSkyObjectsButton !== false"
                 :img="require('@/assets/images/btn-nebulae.svg')"
                 img_alt="Deep Sky Objects Button"
                 class="mr-auto"

@@ -36,6 +36,11 @@ const createStore = () => {
       showLocationDialog: false,
       selectedObject: undefined,
 
+      // disable unused elements:
+      showConstellationsLinesButton: false,
+      showConstellationsArtButton: false,
+      showDeepSkyObjectsButton: false,
+
       showSidePanel: false,
 
       showMainToolBar: true,
