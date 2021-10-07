@@ -21,7 +21,7 @@ if os.path.dirname(__file__) != "./tools":
 
 
 def update_tr(src_path, locales_path, exclude_path=None):
-    os.system('docker run -it -v "$PWD:/app" -v "$PWD/../data:/data" stellarium-web-dev yarn run i18n --src "' +
+    os.system('docker run -it -v "$PWD:/app" -v "$PWD/../data:/data" ghcr.io/mrcne/stellarium-web-dev yarn run i18n --src "' +
               src_path + '/*.?(js|vue)" --locales "' +
               locales_path + '/*.json" --output "i18n-report.json"')
     report = {}
