@@ -638,9 +638,9 @@ static int satellite_render(const obj_t *obj, const painter_t *painter_)
 
     model_alpha = get_model_alpha(sat, &painter, &model_size);
 
-    if (!model_alpha && !selected &&
-            vmag > painter.stars_limit_mag && vmag > hints_limit_mag)
-        return 0;
+//    if (!model_alpha && !selected &&
+//            vmag > painter.stars_limit_mag && vmag > hints_limit_mag)
+//        return 0;
 
     core_get_point_for_mag(vmag, &size, &luminance);
 
