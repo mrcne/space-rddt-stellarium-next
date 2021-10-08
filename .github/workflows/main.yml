@@ -31,7 +31,7 @@ jobs:
         args: /bin/bash -c "source /emsdk/emsdk_env.sh && cd /github/workspace && make js-es6"
 
     - name: Copy web assembly
-      run: 	cp ./build/stellarium-web-engine.js ./web-frontend/src/assets/js/ && cp ./build/stellarium-web-engine.wasm ./web-frontend/src/assets/js/
+      run: 	cp -v ./build/stellarium-web-engine.js ./web-frontend/src/assets/js/ && cp -v ./build/stellarium-web-engine.wasm ./web-frontend/src/assets/js/
 
     - name: Build
       uses: docker://node:12.10.0-alpine
