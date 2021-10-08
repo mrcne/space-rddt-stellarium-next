@@ -28,6 +28,7 @@ static const struct {
     void        (*paint)(const painter_t *painter, const double transf[3][3]);
 } ENTRIES[] = {
     [SYMBOL_ARTIFICIAL_SATELLITE]   = {"Ast",  0xff00ffff},
+    [SYMBOL_SPACE_DEBRIS]           = {"Deb",  0xff00ffff},
     [SYMBOL_OPEN_GALACTIC_CLUSTER]  = {"OpC" , 0xF2E9267F, opc_paint},
     [SYMBOL_GLOBULAR_CLUSTER]       = {"GlC" , 0xF2E9267F, glc_paint},
     [SYMBOL_GALAXY]                 = {"G"   , 0xFF930E7F,   g_paint},

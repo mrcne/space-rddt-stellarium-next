@@ -621,7 +621,7 @@ static int satellite_render(const obj_t *obj, const painter_t *painter_)
     double color[4], model_alpha, model_size;
     double radius;
     char buf[256];
-    const double label_color[4] = RGBA(255, 234, 0, 205);
+    const double label_color[4] = RGBA(242, 200, 2, 205);
     const double white[4] = RGBA(255, 255, 255, 255);
     satellite_t *sat = (satellite_t*)obj;
     const bool selected = core->selection && obj == core->selection;
@@ -655,7 +655,7 @@ static int satellite_render(const obj_t *obj, const painter_t *painter_)
     // Render symbol if needed.
     if (true || (g_satellites->hints_visible && (selected || vmag <= hints_limit_mag))) {
         vec4_copy(label_color, color);
-        symbols_paint(&painter, SYMBOL_ARTIFICIAL_SATELLITE, p_win,
+        symbols_paint(&painter, SYMBOL_SPACE_DEBRIS, p_win,
                       VEC(24.0, 24.0), selected ? white : color, 0.0);
     }
 
