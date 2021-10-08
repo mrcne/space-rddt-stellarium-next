@@ -3,7 +3,7 @@ node_modules
 .DS_Store
 
 # build files
-#dist
+dist
 
 # local env files
 .env.local
