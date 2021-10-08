@@ -1,0 +1,2 @@
+(this["webpackJsonp"]=this["webpackJsonp"]||[]).push([["chunk-2d2253ec"],{e429:function(e,s,n){e.exports=n.p+"js/stellarium-web-engine.2a6407b4.wasm"}}]);
+//# sourceMappingURL=chunk-2d2253ec.9e51af2c.js.map
