@@ -16,7 +16,7 @@
          v-model="panel"
         >
           <v-expansion-panel >
-            <v-expansion-panel-header>That the Duck?</v-expansion-panel-header>
+            <v-expansion-panel-header>What the Duck?!</v-expansion-panel-header>
             <v-expansion-panel-content>
               <p>Our project goal is to raise awareness about space debris.</p>
               <p>Contrary to popular beliefs, space around Earth is far from empty.</p>
@@ -385,6 +385,11 @@ html, body, #app {
 }
 .rubber-duck img {
   width: 50px;
+}
+
+.v-expansion-panel.v-item--active button {
+  color: #f2c802;
+  font-weight: bold;
 }
 
 .theme--dark.v-expansion-panels .v-expansion-panel{
