@@ -29,7 +29,7 @@ const createStore = () => {
       stel: null,
       initComplete: false,
 
-      showNavigationDrawer: false,
+      showNavigationDrawer: true,
       showDataCreditsDialog: false,
       showViewSettingsDialog: false,
       showPlanetsVisibilityDialog: false,

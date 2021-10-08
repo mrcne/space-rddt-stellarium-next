@@ -12,12 +12,15 @@
   <v-navigation-drawer v-model="nav" app stateless width="300">
     <v-layout column fill-height>
       <v-list dense>
-        <v-expansion-panels>
-          <v-expansion-panel v-theme="">
-            <v-expansion-panel-header>What is this?</v-expansion-panel-header>
-            <v-expansion-panel-content>Contrary to popular beliefs, space around Earth is far from empty.<br /><br />
-
-              Our project’s goal is to counter the “out of sight, out of mind” careless approach of the general public towards the issue of space debris. In order to make it memorable, entertaining and funny, we decided to show space debris from an Earthling’s perspective but with a twist: we have marked known space debris with oversized rubber duckies.
+        <v-expansion-panels
+         v-model="panel"
+        >
+          <v-expansion-panel >
+            <v-expansion-panel-header>That the Duck?</v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <p>Our project goal is to raise awareness about space debris.</p>
+              <p>Contrary to popular beliefs, space around Earth is far from empty.</p>
+              <p>We want to counter the “out of sight, out of mind” careless approach of the general public towards the issue of space debris. In order to make it memorable, entertaining and funny, we decided to show space debris from an Earthling’s perspective but with a twist: we have marked known space debris with oversized rubber duckies.</p>
             </v-expansion-panel-content>
           </v-expansion-panel>
           <v-expansion-panel>
@@ -120,6 +123,7 @@ export default {
       guiComponent: 'GuiLoader',
       startTimeIsSet: false,
       initDone: false,
+      panel: 0,
       dataSourceInitDone: false
     }
   },

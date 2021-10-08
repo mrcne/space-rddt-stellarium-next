@@ -118,8 +118,10 @@
       <br />
       <div>Based on awesome</div>
 
-      <img class="tbtitle hidden-xs-only" id="stellarium-web-toolbar-logo" src="@/assets/images/logo.svg" width="30" height="30" alt="Stellarium Web Logo"/>
-      <span class="tbtitle hidden-sm-and-down">Stellarium<sup>Web</sup></span>
+      <a target="_blank" href="https://github.com/Stellarium/stellarium-web-engine" class="stellarium-logo-container">
+        <img class="tbtitle hidden-sm-and-down" id="stellarium-web-toolbar-logo" src="@/assets/images/logo.svg" width="30" height="30" alt="Stellarium Web Logo"/>
+        <span class="tbtitle">Stellarium<sup>Web</sup></span>
+      </a>
       <div>We all stand on the shoulders of giants</div>
     </div>
 
@@ -218,6 +220,13 @@ export default {
 
 .attribution-container .hearth {
   color: red;
+}
+
+.stellarium-logo-container {
+  display: block;
+}
+.stellarium-logo-container span {
+  color: #fff;
 }
 
 </style>
